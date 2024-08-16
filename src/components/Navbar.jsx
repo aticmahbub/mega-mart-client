@@ -1,14 +1,9 @@
 import React from 'react';
-import { NavLink } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
+import useAuth from '../hooks/useAuth';
 
 const Navbar = () => {
-
-    const navLinks = <>
-        <li><NavLink to='/login'>Login</NavLink></li>
-        <li><NavLink to='/registration'>Registration</NavLink></li>
-        <li><NavLink to='/addProduct'>Add Product</NavLink></li>
-
-    </>
+    const { user, logOut } = useAuth()
     return (
         <div className="navbar bg-base-100">
             <div className="navbar-start">
@@ -30,14 +25,23 @@ const Navbar = () => {
                     <ul
                         tabIndex={0}
                         className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow">
-                        {navLinks}
+                        <li><Link to='/login'>Login</Link></li>
+                        <li><Link to='/registration'>Registration</Link></li>
+                        <li><Link to='/addProduct'>Add Product</Link></li>
+                        <li><button onClick={logOut}>Log Out</button></li>
                     </ul>
                 </div>
                 <a className="btn btn-ghost text-xl">daisyUI</a>
             </div>
             <div className="navbar-center hidden lg:flex">
                 <ul className="menu menu-horizontal px-1">
-                    {navLinks}
+                    {
+                        !user?.email ?
+                        <div><li><Link to='/login'>Login</Link></li>
+                        <li><Link to='/registration'>Registration</Link></li>
+                        <li><Link to='/addProduct'>Add Product</Link></li></div>
+                    :
+                    <li><button onClick={logOut}>Log Out</button></li>}
                 </ul>
             </div>
             <div className="navbar-end">
