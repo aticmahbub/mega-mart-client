@@ -5,7 +5,8 @@ import Login from "../pages/Authentication/Login";
 import Registration from "../pages/Authentication/Registration";
 import AddProduct from "../pages/AddProduct";
 import PrivateRoute from "./PrivateRoute";
-import AllProducts from "../components/AllProducts";
+import AllProducts from "../pages/AllProducts";
+
 
 const router = createBrowserRouter([
     {
