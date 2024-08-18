@@ -35,19 +35,23 @@ const Navbar = () => {
                 <a className="btn btn-ghost text-xl">Mega Mart</a>
             </div>
             <div className="navbar-center hidden lg:flex">
-                {
-                    <ul className="menu menu-horizontal px-1">
-                    <li><Link to='/login'>Login</Link></li>
-                    <li><Link to='/registration'>Registration</Link></li>
-                    <li><Link to='/addProduct'>Add Product</Link></li>
-                    <li><Link to='/allProducts'>All Products</Link></li>
+                <ul className="menu menu-horizontal px-1">
+                    {
+                    !user && <div className='flex'><li><Link to='/login'>Login</Link></li>
+                    <li><Link to='/registration'>Registration</Link></li></div>}
 
-                </ul>}
+                    {user &&
+                        <div className='flex'>
+                        <li><Link to='/addProduct'>Add Product</Link></li>
+                    <li><Link to='/allProducts'>All Products</Link></li>
+                        </div>}
+
+                </ul>
             </div>
             <div className="navbar-end">
-               {
-               user &&
-               <button onClick={logOut}>Log Out</button>}
+                {
+                    user &&
+                    <button onClick={logOut}>Log Out</button>}
             </div>
         </div>
     );
