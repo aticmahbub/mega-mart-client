@@ -28,24 +28,26 @@ const Navbar = () => {
                         <li><Link to='/login'>Login</Link></li>
                         <li><Link to='/registration'>Registration</Link></li>
                         <li><Link to='/addProduct'>Add Product</Link></li>
-                        <li><button onClick={logOut}>Log Out</button></li>
+                        <li><Link to='/allProducts'>All Products</Link></li>
+
                     </ul>
                 </div>
-                <a className="btn btn-ghost text-xl">daisyUI</a>
+                <a className="btn btn-ghost text-xl">Mega Mart</a>
             </div>
             <div className="navbar-center hidden lg:flex">
-                <ul className="menu menu-horizontal px-1">
-                    {
-                        !user?.email ?
-                        <div><li><Link to='/login'>Login</Link></li>
-                        <li><Link to='/registration'>Registration</Link></li>
-                        <li><Link to='/addProduct'>Add Product</Link></li></div>
-                    :
-                    <li><button onClick={logOut}>Log Out</button></li>}
-                </ul>
+                {
+                    <ul className="menu menu-horizontal px-1">
+                    <li><Link to='/login'>Login</Link></li>
+                    <li><Link to='/registration'>Registration</Link></li>
+                    <li><Link to='/addProduct'>Add Product</Link></li>
+                    <li><Link to='/allProducts'>All Products</Link></li>
+
+                </ul>}
             </div>
             <div className="navbar-end">
-                <a className="btn">Button</a>
+               {
+               user &&
+               <button onClick={logOut}>Log Out</button>}
             </div>
         </div>
     );
