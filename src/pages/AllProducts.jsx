@@ -27,6 +27,54 @@ const AllProducts = () => {
                     ></ProductsCard>)
                 }
             </div>
+        <div>
+            <h2>All Products</h2>
+            <button 
+            className='btn btn-primary'
+            onClick={() =>setAsc(!asc)}
+            >
+                {asc?'Price:Low to High': 'Price: High to Low'}
+                </button>
+            <div>
+                {
+                    products.map(product =><ProductsCard
+                    key={product._id}
+                    product={product}
+                    ></ProductsCard>)
+                }
+            </div>
+        <div>
+            <h2>All Products</h2>
+            <button 
+            className='btn btn-primary'
+            onClick={() =>setAsc(!asc)}
+            >
+                {asc?'Price:Low to High': 'Price: High to Low'}
+                </button>
+            <div>
+                {
+                    products.map(product =><ProductsCard
+                    key={product._id}
+                    product={product}
+                    ></ProductsCard>)
+                }
+            </div>
+        <div>
+            <h2>All Products</h2>
+            <button 
+            className='btn btn-primary'
+            onClick={() =>setAsc(!asc)}
+            >
+                {asc?'Price:Low to High': 'Price: High to Low'}
+                </button>
+            <div>
+                {
+                    products.map(product =><ProductsCard
+                    key={product._id}
+                    product={product}
+                    ></ProductsCard>)
+                }
+            </div>
         </div>
     );
 };
