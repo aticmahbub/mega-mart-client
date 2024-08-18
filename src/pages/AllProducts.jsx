@@ -6,10 +6,10 @@ const AllProducts = () => {
     const [asc, setAsc] =useState(true)
     console.log(products);
     useEffect(()=>{
-        fetch('http://localhost:3000/products')
+        fetch(`http://localhost:3000/products?sort=${asc?'asc':'dsc'}`)
         .then(res =>res.json())
         .then(data => setProducts(data))
-    } ,[])
+    } ,[asc])
      return (
         <div>
             <h2>All Products</h2>

@@ -16,7 +16,7 @@ const ProductsCard = ({product}) => {
     <h2 className="card-title">{ProductName}</h2>
     <p>{Description}</p>
     <div className="card-actions justify-end">
-      <button className="btn btn-primary">Buy Now</button>
+      <button className="btn btn-primary">{Price}</button>
     </div>
   </div>
 </div>
